@@ -31,7 +31,7 @@ function el(tag, props = {}, ...children) {
 }
 const button = (text, click, options = {}) => el('button', {
   type: 'button', click: () => Promise.resolve().then(click).catch(error => notify(error.message)), ...options,
-});
+}, text);
 const field = (label, input) => el('label', { className: 'field' }, label, input);
 const option = (value, label) => el('option', { value }, label);
 const text = (label, className = 'muted') => el('p', { className }, label);
